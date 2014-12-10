@@ -1,0 +1,22 @@
+% Abstract for the TUM report document
+% Included by MAIN.TEX
+
+
+\clearemptydoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}	
+
+
+
+
+
+\vspace*{2cm}
+\begin{center}
+{\Large \bf Abstract}
+\end{center}
+\vspace{1cm}
+This thesis introduces a new coreference resolution system in biomedical texts. This system identifies and links expressions (definite nouns and pronouns) in the text, that refer to proteins. I focus on  improvement of the  current results in protein coreference resolution in abstracts and  on applying it in the full text articles. I used syntactic rules to resolve pronouns, and  a string matching method  and domain knowledge together with the C5.0 classifier to resolve definite noun anaphoras. \\
+  Furthermore, the problem of missing a corpus with full text articles negatively  impacts  this area of research . To overcome this problem I annotated  proteins, coreference and anaphora-antecedent relations in 10 full text documents. 
+  During this thesis I collected statistics from the existing BioNLP corpus which contains only abstracts and reviewed current Coreference resolution methods in other non-biomedical corpuses.    
+  The system achieves 73\% precision and 75\% recall in the BioNLP development set and 72\% precision and 57\% recall in the test set. In the full text articles the precision is 75\% and recall is 65\%.
+ 

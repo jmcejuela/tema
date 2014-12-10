@@ -1,0 +1,48 @@
+\BOOKMARK [0][-]{section*.1}{Abstract}{}% 1
+\BOOKMARK [0][-]{section*.2}{Acknowledgements}{}% 2
+\BOOKMARK [-1][]{part.1}{Introduction and Theory}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{part.1}% 4
+\BOOKMARK [1][-]{section.1.1}{Coreference resolution}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Coreference resolution in Biomedical literature}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{Data description}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Task description and evaluation}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.3}{Evaluation Measures}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.4}{Evaluation measures in BioNLP Protein coreference resolution}{section.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.2.5}{Importance of coreference resolution}{section.1.2}% 11
+\BOOKMARK [0][-]{chapter.2}{Natural Language Processing}{part.1}% 12
+\BOOKMARK [1][-]{section.2.1}{Natural Language Processing: Concepts}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.1.1}{NLP tasks that help coreference resolution}{section.2.1}% 14
+\BOOKMARK [2][-]{subsection.2.1.2}{NLP tasks which coreference resolution help}{section.2.1}% 15
+\BOOKMARK [1][-]{section.2.2}{Syntax}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.1}{Words}{section.2.2}% 17
+\BOOKMARK [2][-]{subsection.2.2.2}{Phrases}{section.2.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.3}{Clauses}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.4}{Independent clause}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.5}{Dependent clauses}{section.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.6}{Sentences}{section.2.2}% 22
+\BOOKMARK [-1][]{part.2}{Coreference Resolution}{}% 23
+\BOOKMARK [0][-]{chapter.3}{Coreference resolution}{part.2}% 24
+\BOOKMARK [1][-]{section.3.1}{History}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Coreference resolution in biomedical domain}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.3}{The state of the art in protein coreference resolution}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.4}{Available tools for biomedical information extraction}{chapter.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Coreference resolution using rules and domain-dependent features}{part.2}% 29
+\BOOKMARK [1][-]{section.4.1}{Overview}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.2}{Data set}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.3}{Coreference resolution system architecture}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.4}{Preprocessing}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.5}{Markable detection}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.6}{Anaphora selection}{chapter.4}% 35
+\BOOKMARK [2][-]{subsection.4.6.1}{Distribution of anaphoric expressions}{section.4.6}% 36
+\BOOKMARK [1][-]{section.4.7}{Antecedent candidate selection}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.7.1}{Statistics of the data sets}{section.4.7}% 38
+\BOOKMARK [2][-]{subsection.4.7.2}{Syntax structure of data set}{section.4.7}% 39
+\BOOKMARK [2][-]{subsection.4.7.3}{Domain dependent heuristics}{section.4.7}% 40
+\BOOKMARK [1][-]{section.4.8}{Antecedent prediction}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.8.1}{Relative pronouns}{section.4.8}% 42
+\BOOKMARK [2][-]{subsection.4.8.2}{Personal pronouns}{section.4.8}% 43
+\BOOKMARK [2][-]{subsection.4.8.3}{Possessive pronouns}{section.4.8}% 44
+\BOOKMARK [2][-]{subsection.4.8.4}{Definite noun phrases}{section.4.8}% 45
+\BOOKMARK [0][-]{chapter.5}{Results}{part.2}% 46
+\BOOKMARK [1][-]{section.5.1}{Results}{chapter.5}% 47
+\BOOKMARK [0][-]{chapter.6}{Bibliography}{part.2}% 48
