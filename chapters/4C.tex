@@ -35,21 +35,21 @@ I used the statistics to get knowledge about the corpus and they led me to resea
 
 \section{Data set}
 
-As I have described in the first chapter, I have used the training set of BioNLP corpus to derive the rules. I have tested the accuracy of the algorithm in the test set and in the corpus of 8 full text documents that I have annotated in a format similar to the BioNLP corpus. I have annotated this corpus of 8 documents in the tagtog.net [67,68], which is a web application tool for annotation. I have compared my algorithm with current state of the art algorithms in the development and the test set of BioNLP corpus.
+As I have described in the first chapter, I have used the training set of BioNLP corpus to derive the rules. I have tested the accuracy of the algorithm in the test set and in the corpus of 8 full text documents that I have annotated in a format similar to the BioNLP corpus. I have annotated this corpus of 8 documents on the www.tagtog.net [67,68], which is a web application tool for annotation. I have compared my algorithm with current state of the art algorithms in the development and the test set of BioNLP corpus.
 
 \section{Coreference resolution system architecture}
 
-Coreference resolution systems have a pipeline architecture. My protein coreference resolution system I developed in Java and will publish as open source tool.\footnote{https://github.com/kujta1/CoreferenceResolution}
+Coreference resolution systems have a pipeline architecture. My protein coreference resolution system I developed in Java and  published as an open source tool.\footnote{https://github.com/kujta1/CoreferenceResolution}
 \newpage
 \begin{figure}[t]
 	\begin{center}
 		\includegraphics[scale=0.8]{architecture.png} 
- 		\caption{ Architecture of the system. As input the system receives two files, the protein annotation file and the text file. The protein annotation file should follow the BioNLP annotation schema. The system after the fifth step, antecedent prediction, will create a file  in which the system will write the coreference links of the inputted text file  [3] }
+ 		\caption[Architecture of the coreference resolution system]{ Architecture of the system. As input the system receives two files, the protein annotation file and the text file. The protein annotation file should follow the BioNLP annotation schema. The system after the fifth step, antecedent prediction, will create a file  in which the system will write the coreference links of the inputted text file  [3] }
 		\label{Figure 8}
 	\end{center}
 \end{figure}
 
-The first step is the preprocessing step where I dived the text into sentences. Then I select all nun phrases the are potential antecedents of an anaphoric expression. In the next step, I select potential antecedent candidates. When I have selected all anaphoric expressions then for each anaphoric expression I select its potential antecedents. In the final step from generated candidates I select the most likely antecedent candidate for each anaphoric expression.   
+The first step is the preprocessing step where the text is dived into sentences. Then, I select all nun phrases the are potential antecedents of an anaphoric expression. In the next step, I select potential antecedent candidates. When  all anaphoric expressions  are selected then for each anaphoric expression I select its potential antecedents. In the final step, I select the most likely antecedent candidate for each anaphoric expression.   
    
 In the following sections, I will describe the 5 components of my coreference resolution system. 
   
@@ -57,23 +57,23 @@ In the following sections, I will describe the 5 components of my coreference re
    \begin{tabular}{ m{20mm} m{113mm} } 
 	\footnotesize{Input (PMID - 7964516)}&\footnotesize{T cell hybridomas respond to activation signals by undergoing apoptotic cell death, and this is likely to represent comparable events related to tolerance induction in immature and mature T cells in vivo. Previous studies using antisense oligonucleotides implicated the c-Myc protein in the phenomenon of activation-induced apoptosis. This role for c-Myc in apoptosis is now confirmed in studies using a dominant negative form of its heterodimeric binding partner, Max, which we show here inhibits activation-induced apoptosis.}\\
 	\hline
-	\footnotesize{Preprocessing of sentence S3}&\footnotesize{S1: T cell hybridomas respond to activation signals by undergoing apoptotic cell death, and this is likely to represent comparable events related to tolerance induction in immature and mature T cells in vivo. S2: Previous studies using antisense oligonucleotides implicated the c-Myc protein in the phenomenon of activation-induced apoptosis. S3: [This [[role] for [c-Myc] in [apoptosis]]] is now confirmed in [[studies] using a dominant negative form of its heterodimeric binding partner, Max, which we show here inhibits activation-induced apoptosis].}\\
+	\footnotesize{Preprocessing of sentence S3}&\footnotesize{S1: T cell hybridomas respond to activation signals by undergoing apoptotic cell death, and this is likely to represent comparable events related to tolerance induction in immature and mature T cells in vivo. S2: Previous studies using antisense oligonucleotides implicated the c-Myc protein in the phenomenon of activation-induced apoptosis. S3: This role] for c-Myc in apoptosis is now confirmed in studies using a dominant negative form of its heterodimeric binding partner, Max, which we show here inhibits activation-induced apoptosis.}\\
 	\hline
-	\footnotesize{Markable detection} &\footnotesize{S1: [T cell hybridomas] respond to [activation signals] by undergoing [apoptotic cell death], and this is likely to represent [comparable events related to tolerance induction] in [immature and mature T cells [in vivo]]. S2: [Previous studies using [antisense oligonucleotides]] implicated [the c-Myc protein] in [the phenomenon of [activation-induced apoptosis]]. S3: [This role for [c-Myc] in [apoptosis]] is now confirmed in [studies] using a [dominant negative form of [[its] heterodimeric binding partner,[Max]]], [which] [we] show here inhibits [activation-induced apoptosis].}\\
+	\footnotesize{Markable detection} &\footnotesize{S1: \textit{[T cell hybridomas]} respond to \textit{[activation signals]} by undergoing \textit{[apoptotic cell death]}, and this is likely to represent\textit{ [comparable events related to tolerance induction]} in \textit{[immature and mature T cells [in vivo]]}. S2: [Previous studies using\textit{ [antisense oligonucleotides]}] implicated\textit{ [the c-Myc protein]} in \textit{[the phenomenon of [activation-induced apoptosis]]}. S3: \textit{[This role for [c-Myc] in [apoptosis]]} is now confirmed in \textit{[studies]} using a \textit{[dominant negative form of [[its] heterodimeric binding partner,[Max]]]}, \textit{[which] [we]} show here inhibits \textit{[activation-induced apoptosis]}.}\\
 	\hline
-	\footnotesize{Anaphora selection} & \footnotesize{S1: T cell hybridomas respond to activation signals by undergoing apoptotic cell death, and [this] is likely to represent comparable events related to tolerance induction in immature and mature T cells in vivo. S2: Previous studies using antisense oligonucleotides implicated the c-Myc protein in the phenomenon of activation-induced apoptosis. S3: This role for c-Myc in apoptosis is now confirmed in studies using a dominant negative form of [its] heterodimeric binding partner, Max, [which] we show here inhibits activation-induced apoptosis.}\\
+	\footnotesize{Anaphora selection} & \footnotesize{S1: T cell hybridomas respond to activation signals by undergoing apoptotic cell death, and \textbf{[this]} is likely to represent comparable events related to tolerance induction in immature and mature T cells in vivo. S2: Previous studies using antisense oligonucleotides implicated the c-Myc protein in the phenomenon of activation-induced apoptosis. S3: This role for c-Myc in apoptosis is now confirmed in studies using a dominant negative form of \textbf{[its]} heterodimeric binding partner, Max,[this] we show here inhibits activation-induced apoptosis.}\\
 	\hline
-	\footnotesize{Antecedent candidate selection and antecedent}& \footnotesize{S1: [T cell hybridomas] respond to [activation signals] by undergoing [apoptotic cell death], and this is likely to represent [comparable events related to tolerance induction] in [immature and mature T cells [in vivo]]. S2: [Previous studies using [antisense oligonucleotides]] implicated [the c-Myc protein] in [the phenomenon of [activation-induced apoptosis]]. S3: [This role for [c-Myc] in [apoptosis]] is now confirmed in [studies] using [a dominant negative form of \textbf{[its]} heterodimeric binding partner, Max], which we show here inhibits activation-induced apoptosis.}\\
+	\footnotesize{Antecedent candidate selection and antecedent}& \footnotesize{S1: [T cell hybridomas] respond to [activation signals] by undergoing [apoptotic cell death], and this is likely to represent [comparable events related to tolerance induction] in [immature and mature T cells [in vivo]]. S2: [Previous studies using [antisense oligonucleotides]] implicated [the c-Myc protein] in [the phenomenon of [activation-induced apoptosis]]. S3: \textcolor{red}{[This role for [c-Myc] in [apoptosis]]} is now confirmed in [studies] using [a dominant negative form of \textcolor{blue}{\textbf{\textit{[its]}}} heterodimeric binding partner, Max], which we show here inhibits activation-induced apoptosis.}\\
 	\hline
-	\footnotesize{Predict antecedent}&\footnotesize{S1: T cell hybridomas respond to activation signals by undergoing apoptotic cell death, and this is likely to represent comparable events related to tolerance induction in immature and mature T cells in vivo. S2: Previous studies using antisense oligonucleotides implicated the c-Myc protein in the phenomenon of activation-induced apoptosis. S3: This role for \emph{\textbf{[c-Myc]}} in apoptosis is now confirmed in studies using a dominant negative form of \emph{\textbf{[its]}} heterodimeric binding partner, Max, which we show here inhibits activation-induced apoptosis.}
+	\footnotesize{Predict antecedent}&\footnotesize{S1: T cell hybridomas respond to activation signals by undergoing apoptotic cell death, and this is likely to represent comparable events related to tolerance induction in immature and mature T cells in vivo. S2: Previous studies using antisense oligonucleotides implicated the c-Myc protein in the phenomenon of activation-induced apoptosis. S3: This role for \textcolor{red}{\emph{\textbf{[c-Myc]}}} in apoptosis is now confirmed in studies using a dominant negative form of \textcolor{blue}{\emph{\textbf{[its]}}} heterodimeric binding partner, Max, which we show here inhibits activation-induced apoptosis.}
   \end{tabular}
-  \caption{A simulation of the protein coreference resolution system workflow (the text adopted from [3])}
+  \caption[A simulation of the protein coreference resolution system]{A simulation of the protein coreference resolution system workflow (the text adopted from [3])}
 \end{table}
 
 \newpage
 \section{Preprocessing}
 
-In this step, I have used sentence segmentation and syntax parsers to structure the inputted text. For sentence segmentation I used Genia sentence splitter and for sentence (deep) parsing I used Enju parser.[54]
+In this step, I have used sentence segmentation and syntax parsers to structure the inputted text. For sentence segmentation I used Genia sentence splitter and for sentence (deep) parsing I used Enju parser.[50,54]
 
 \section{Markable detection}
 
@@ -82,7 +82,7 @@ After the preprocessing step I knew the structure of each sentence, I selected t
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.4]{SameHeadWord.jpg} 
- 		\caption{ Filtering noun phrases that share the same head word. In this example, all four noun phrases have the same headword \emph{"role"}. I considered as potential candidate just the longest noun phrases \emph{"This role for c-Myc in apoptosis"}.(In the Enju parser noun phrases are marked with abbreviations NP and NX) }
+ 		\caption[Filtering out noun phrases that share the same head word]{ Filtering out noun phrases that share the same head word. In this example, all four noun phrases have the same headword \emph{"role"}. I considered as potential candidate just the longest noun phrases \emph{"This role for c-Myc in apoptosis"}.(In the Enju parser noun phrases are marked with abbreviations NP and NX) }
 		\label{Figure 9}
 	\end{center}
 \end{figure}
@@ -92,7 +92,7 @@ Additionally, I did not consider as markables noun phrases that have a subordina
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.45]{removeSubordinateClause.jpg} 
- 		\caption{ Filtering noun phrases that have a subordinate clause in their content. In this example, I removed noun phrases (marked with \emph{\textbf{x}}) that in their content have the subordinate clause  \emph{"which we show here inhibits activation-induced apoptosis"} }
+ 		\caption[Filtering out noun phrases that have a subordinate clause in their content]{ Filtering out noun phrases that have a subordinate clause in their content. In this example, I removed noun phrases (marked with \emph{\textbf{x}}) that in their content have the subordinate clause  \emph{"which we show here inhibits activation-induced apoptosis"} }
 		\label{Figure 10}
 	\end{center}
 \end{figure}

@@ -18,22 +18,22 @@ In practice, a pronominal anaphora resolution algorithm is hard to achieve accur
 \begin{algorithm}[H]
 \caption{Hobbs's algorithm}\label{alg:Hobbs}
 \begin{algorithmic}[1]
-\State Begin at the $NP$ node immediately dominating the pronoun.
+\State Find the $NP$ node immediately dominating the pronoun.
 \State Go up the tree to the first $NP$ or $S$ node encountered. Call this node $X$, and call the path used to reach it $p$.
-\State Traverse all branches below node $X$ to the left of path $p$ in a left-to-right, breadth first fashion. Propose as the antecedent any $NP$ node that is encountered which has an $NP$ or $S$ node between it and $X$.
+\State Traverse all children of node $X$ to the left of path $p$ in a left-to-right (L-R), breadth first (BF) fashion. Candidate as antecedent any $NP$ node that appear.
 \If { node $X$ is the highest node in the sentence} 
-	\State traverse the surface parse trees of previous sentences in the text in order of recency, the most recent first; each tree is traversed in a left-to-right, breadth-first manner, and when an $NP$ is encountered, it is proposed as antecedent
+	\State traverse the previous sentences in the text in order of recency, the most recent first; each tree is traversed in a L-R, BF manner, and candidate as antecedent any $NP$.
 \Else
-	\State (X is not the highest node in the sentence) continue to step 9.
+	\State ($X$ is not the highest node in the sentence) continue to step 9.
 \EndIf
-\State From node X, go up the tree to the first NP or S node encountered. Call this new node X, and call the path traversed to reach it p.
-\If {X is an NP node and if the path p to X did not pass through the N node that X immediately dominates}
-     \State propose X as the antecedent
+\State From $X$, go up to the first $NP$ or $S$ node. Call this new node $X$, and the path $p$.
+\If {$X$ is an $NP$ node and if the path $p$ to $X$ did not pass through the $NP$ node that $X$ immediately dominates}
+     \State propose $X$ as the antecedent
 \EndIf
-\State Traverse all branches below node X to the left of path p in a left-to-right, breadth first manner. Propose any NP node encountered as the antecedent
-\If {X is an S node}
-    \State traverse all branches of node X to the right of path p in a left-to-right, breadth first manner, but do not go below any NP or S node encountered.
-    \State Propose any NP node encountered as the antecedent.
+\State Traverse children of $X$ to the left of $p$ in a L-R, BF manner. Propose any $NP$ node encountered as the antecedent
+\If {$X$ is an $S$ node}
+    \State traverse children of $X$ to the right of path $p$ in a L-R, BF manner, but do not go below any $NP$ or $S$ node encountered.
+    \State Propose any $NP$ node encountered as the antecedent.
 \EndIf
 \State Go to step 4
 \end{algorithmic}
@@ -69,15 +69,15 @@ In 2011 was organized a competition in Protein Coreference Resolution. The purpo
 \newpage
 \begin{table}[h]
   \begin{center}
-     \begin{tabular}{|l C{2cm} C{2cm} C{2cm}|} 
-	 	\hline
-  		& Precision & Recall & F-score \\ [1ex] 
+     \begin{tabular}{L{2.0cm} C{2.2cm} C{2.2cm} C{2.2cm}} 
+	 	
+  		& Precision & Recall & F-score \\ [1.1ex] 
  		\hline
- 		1st place & 73.26 & 22.18 & 34.05 \\ [1ex]
+ 		1st place & 73.26 & 22.18 & 34.05 \\ [1.1ex]
  		\hline
- 		2nd place & 54.45 & 21.48 & 30.96 \\[1ex]
+ 		2nd place & 54.45 & 21.48 & 30.96 \\[1.1ex]
   		\hline
- 		3rd place & 63.22 & 19.37 & 29.65 \\ [1ex]
+ 		3rd place & 63.22 & 19.37 & 29.65 \\ [1.1ex]
   		\hline
 	\end{tabular}
   \end{center} 
@@ -89,18 +89,20 @@ After the competition some research groups were interested to improve the result
  
  In the table 3.2, I present results of the best performing algorithms in protein coreference resolution.
 \begin{table}[h]
+\centering
   \begin{center}
- 	\begin{tabular}{|l C{2cm} C{2cm} C{2cm}|} 
+  \centering
+ 	\begin{tabular}{L{4.2cm} C{2cm} C{2cm} C{2cm}} 
+ 		
+  		& Precision & Recall & F-score \\ [1.1ex] 
  		\hline
-  		& Precision & Recall & F-score \\ [1ex] 
+ 		Hybrid approach & 55.6 & 67.2 & 60.9 \\ [1.1ex] 
  		\hline
- 		Hybrid approach & 55.6 & 67.2 & 60.9 \\ [1ex] 
+ 		Event miner & 50.4 & 62.7 & 55.9 \\ [1.1ex] 
  		\hline
- 		Event miner & 50.4 & 62.7 & 55.9 \\ [1ex] 
+ 		Semantic classification & 52.2 & 50.2 & 51.3 \\ [1.1ex] 
  		\hline
- 		Semantic classification & 52.2 & 50.2 & 51.3 \\ [1ex] 
- 		\hline
- 		Reconcile & 73.3 & 22.2 & 34.1 \\ [1ex] 
+ 		Reconcile & 73.3 & 22.2 & 34.1 \\ [1.1ex] 
  		\hline
 	\end{tabular}
   \end{center} 
@@ -120,8 +122,8 @@ I used the deep parser "ENJU parser", which is trained in biomedical data [50]. 
 
 \begin{figure}[h]
   \begin{center}
-	\includegraphics[scale=0.25]{Enju_output.jpg} 
- 	\caption{Simulation of Hobbs's Algorithm [30] }
+	\includegraphics[scale=0.38]{Enju_output.jpg} 
+ 	\caption[Example output of Enju parser]{Example output of Enju parser [59] }
 	\label{Figure 6}
   \end{center}
 \end{figure}
@@ -129,16 +131,14 @@ I used the deep parser "ENJU parser", which is trained in biomedical data [50]. 
 An advantage of HPSG parsers is that they give rich linguistic informations. The Enju parser returns the syntactic structure of the sentence in tree. This structure is returned as XML object. In each internal node (not leaf) of the XML object are included these informations: syntactic category (verb, noun phrase preposition,...), extra syntax category (coordinate clause, subordinate clause), and a unique identifier for the node. 
 
 For each token, leaf node of the tree, the parser provides information about the following linguistic characteristics: unique identifier of the token, syntactic category, Penn Treebank-style part of speech tag, base form, and for each of part of speech gives its characteristics (words, punctuations). For example for verb, gives following information: the person, the number, the tense, aspect and voice(passive/active). 
-
-\newpage
 \begin{figure}[h]
    \begin{center}
 		\includegraphics[scale=0.25]{Extended.jpg} 
- 		\caption[Information that \emph{Enju parser} gives for the token \emph{is}]{Information that \emph{Enju parser} gives for the token \emph{is}}
+ 		\caption[Information that \emph{Enju parser} gives for the token \emph{is}]{Information that \emph{Enju parser} gives for the token \emph{is}[59]}
 		\label{Figure 7}
 	\end{center}
 \end{figure}
  
-Another tool that I used in this thesis is the sentence splitter, GENIA sentence splitter (GeniaSS) [59]. This sentence splitter receives a text (a text file) as input and returns array of sentences (a file where each sentence is written in a specific line). This sentence splitter is trained on supervised learning method using maximum entropy modelling; and it is implemented in C++ [61]. 
+Another tool that I used in this thesis is the sentence splitter, GENIA sentence splitter (GeniaSS) [55]. This sentence splitter receives a text (a text file) as input and returns array of sentences (a file where each sentence is written in a specific line). This sentence splitter is trained on supervised learning method using maximum entropy modelling; and it is implemented in C++ [61]. 
 
-GeniaSS is high accurate parser sentence splitter in the Biomedical domain, it achieves an F-score of 99.7 on 200 unseen GENIA corpus.[15]
+GeniaSS is high accurate parser sentence splitter in the Biomedical domain, it achieves an F-score of 99.7 on 200 unseen GENIA corpus [15].
