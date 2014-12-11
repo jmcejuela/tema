@@ -15,10 +15,12 @@
 {\Large \bf Abstract}
 \end{center}
 \vspace{1cm}
-This thesis introduces a new coreference resolution system for biomedical texts. This system identifies and links expressions (definite nouns and pronouns), which refer to proteins. I focus on improving the current state-of-the-art in coreference resolution for abstracts and, a novel aspect, apply the system on full-text articles. The system uses syntactic rules to resolve pronouns, and  a string-matching method  and domain knowledge together with the C5.0 classifier to resolve definite noun anaphoras. \\
-  Furthermore, the lack of a corpus with full text articles negatively impacts  this area of research. To overcome this problem, I annotated 10 full-text documents, containing: proteins, coreference, and anaphora-antecedent relations.
+This thesis introduces a new coreference resolution system for biomedical texts. This system identifies and links expressions (definite nouns and pronouns), which refer to proteins. I focus on improving the current state-of-the-art in coreference resolution for abstracts and, a novel aspect, apply the system on the full-text articles. The system uses syntactic rules to resolve pronouns, and domain knowledge together with an ordered set of syntactic and semantic rules to resolve definite noun anaphoras. \\
   During this thesis I collected statistics from the existing BioNLP corpus of abstracts and reviewed current coreference resolution methods in other non-biomedical corpora.
-  The system achieves 73\% precision and 75\% recall in the BioNLP development set and 72\% precision and 57\% recall in the test set. On my annotated full-text articles, the precision is 75\% and recall is 65\%.
+  
+  The system, in the BioNLP development set, achieves 75\% precision, 68.3\% recall  and  71.5\% F-score, which is an improvement of +4.1\% of the current state of the art. In the test set the system achieves 60.92\% precision, 65.53\% recall and 63.14\% F-score, which is an improvement of +2.24\% of the current state of the art. 
+ 
+On full-text articles, the system achieves 82.3\% precision, 61.35\% recall and 70.2\% F-score. These results are the first results in protein coreference resolution in full text articles. 
 
 % Juanmi: it makes no sense to highlight the creation of the full text corpus (btw 8 or 10 documents?) here in the abstract and then on the actual thesis body don't even dedicate to this aspect a small section. That is, either you remove this comment from the abstract, or rather create a section in the body (better)
 

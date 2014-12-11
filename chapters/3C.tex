@@ -18,12 +18,11 @@ In practice, a pronominal anaphora resolution algorithm is hard to achieve accur
 \begin{algorithm}[H]
 \caption{Hobbs's algorithm}\label{alg:Hobbs}
 \begin{algorithmic}[1]
-\State Begin at the NP node immediately dominating the pronoun.
-\State Go up the tree to the first NP or S node encountered. Call this node X, and call the path used to reach it p.
-\State Traverse all branches below node X to the left of path p in a left-to-right, breadth first fashion. Propose as the antecedent any NP node that is encountered which has
-an NP or S node between it and X.
-\If { node X is the highest node in the sentence} 
-	\State traverse the surface parse trees of previous sentences in the text in order of recency, the most recent first; each tree is traversed in a left-to-right, breadth-first manner, and when an NP is encountered, it is proposed as antecedent
+\State Begin at the $NP$ node immediately dominating the pronoun.
+\State Go up the tree to the first $NP$ or $S$ node encountered. Call this node $X$, and call the path used to reach it $p$.
+\State Traverse all branches below node $X$ to the left of path $p$ in a left-to-right, breadth first fashion. Propose as the antecedent any $NP$ node that is encountered which has an $NP$ or $S$ node between it and $X$.
+\If { node $X$ is the highest node in the sentence} 
+	\State traverse the surface parse trees of previous sentences in the text in order of recency, the most recent first; each tree is traversed in a left-to-right, breadth-first manner, and when an $NP$ is encountered, it is proposed as antecedent
 \Else
 	\State (X is not the highest node in the sentence) continue to step 9.
 \EndIf
