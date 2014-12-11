@@ -2,3 +2,64 @@
 \label{Results}
 \section{Results}
 
+In this chapter I will show the performance results for the protein coreference resolution system.The evaluation is done in the way that is described in the first chapter. To evaluate the system in the development and the test set I used the BioNLP online testing system [71][72]. In the development set there are 202 coreferent links the system should predict and in the test set there are 284 coreferent links that the system should predict.  
+
+I will show the result of the whole system and I will compare with the current state of the art method and other best methods.
+
+For the development data set I will compare results with current state of the art methods in each of 4 types (personal,possessive, relative and definite noun phrases). 
+
+Additionally, I will present the first result in 243 coreferent link in coreference resolution in full text articles.
+
+\begin{table}[h]
+   \begin{center}
+	 \begin{tabular}{l | C{1.7cm} C{2cm} C{1.7cm}}
+ 		\hline
+  		Methods & Recall & Precision & F  \\
+ 		\hline
+ 		CR resolver & 52.5 & 50.2 & 51.3  \\
+ 		\hline 
+ 		Current state of the art & 55.6 & 67.2 & 60.9 \\
+ 		\hline   
+ 		\textbf{My system} & \textbf{60.92} & \textbf{65.53} & \textbf{63.14} \\
+ 		\hline  
+ 	\end{tabular}
+  \end{center} 
+  \caption{ Results of the current the best two results and the results of the system that I build}
+\end{table}
+Table 5.1 shows the result of the system and the current state of the art algorithms in Protein coreference resolution in the test data set. The evaluation measures precision (P), recall (R), and F-measure (F)  are in presented in percentage. The system performance is tested in the online system of the Protein coreference task website. This test is performed in the test data set which consists of 250 documents and in this data set appear 284 protein coreference links. The new methods that I implemented in the system improved for 5.3\% the recall and doped the precision for 1.7\%. My system outperforms the current state of the art  method in the F-measure by 2.24\%.
+
+The table 5.2 shows the result of the system in the full text. The system performance is tested in 8 full text documents, in which appear 243 protein coreference links. The result that I present in this thesis are first results in full text articles. This results are first because the protein coreference  resolution is a new research filed and  does not exist an annotated corpus with full text articles.   
+\begin{table}[h] 
+   \begin{center}
+	 \begin{tabular}{l | C{1.7cm} C{2cm} C{1.7cm}}
+ 		\hline
+  		Methods & Recall & Precision & F1  \\
+ 		\hline
+ 		\textbf{My system} & \textbf{61.3} & \textbf{82.3} & \textbf{70.2} \\
+ 		\hline  
+ 	\end{tabular}
+  \end{center} 
+  \caption{ }
+\end{table}
+\begin{table}[t]
+   \begin{center}
+   {
+   \centering
+	 \begin{tabular}{L{3.5cm} | C{0.8 cm} C{0.8cm} C{0.8cm} | C{0.8cm} C{0.8cm} C{0.8cm} | C{1.25cm}}
+	 & \multicolumn{3}{c|}{{\footnotesize Current state of the art}} & \multicolumn{3}{c|}{{\footnotesize My system}}\\
+	 \hline
+ 		& {\footnotesize R} & {\footnotesize P} & {\footnotesize F} & {\footnotesize R} & {\footnotesize P} & {\footnotesize F} &  {\footnotesize Diff. } \\
+ 		\hline
+ 		{\footnotesize Relative pronouns} & {\footnotesize 83.8} & {\footnotesize 83.8} & {\footnotesize \textbf{83.8}} & {\footnotesize 85.3} & {\footnotesize 78.4} & {\footnotesize \textbf{81.7}} & {\footnotesize \textcolor{red}{\textbf{-2.1}}} \\
+ 		\hline 
+ 		{\footnotesize Per. \& poss. pronouns} & {\footnotesize 63.8} & {\footnotesize 77.9} & {\footnotesize \textbf{70.2}} & {\footnotesize 75.6} & {\footnotesize 74.7} & {\footnotesize \textbf{75.1}} & {\footnotesize \textcolor{blue}{\textbf{+4.9}}} \\
+ 		\hline   
+ 		{\footnotesize Definite noun phrases} & {\footnotesize 36.8} & {\footnotesize 58.3} & {\footnotesize \textbf{45.2}} & {\footnotesize 45.2} & {\footnotesize 66.7} & {\footnotesize \textbf{55.4}} & {\footnotesize\textcolor{blue}{\textbf{ +10.2}}} \\
+ 		\hline  
+ 		{\footnotesize Whole system} & {\footnotesize 59.9} & {\footnotesize 77.1} & {\footnotesize \textbf{67.4}} & {\footnotesize 68.3} & {\footnotesize 75} & {\footnotesize \textbf{71.5}} & {\footnotesize \textcolor{blue}{\textbf{+4.1}}} \\
+ 		\hline  
+ 	\end{tabular}
+ 	}
+  \end{center} 
+  \caption{ Distribution of anaphoric expressions that refer to protein by  syntactic category}
+\end{table}
