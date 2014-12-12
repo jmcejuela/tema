@@ -112,7 +112,7 @@ The coreference relation file contains three types of annotations: anaphoric ann
 
 \subsection{Task description and evaluation}
 
-For both types of coreference relations the BioNLP community (mentioned in the previous section) defined a sub-task. First relation type is named surface coreference resolution and the latter is named protein coreference resolution.
+For both types of coreference relations the BioNLP community defined a sub-task. The first relation type is named surface coreference resolution and the latter is named protein coreference resolution.
 
 For both tasks, the resolver receives a text and a protein annotation file, and as output should return all protein mentions with their offsets and coreference relations between mentions. The result should be a file similar to Example (3), with all detected anaphoric expressions , antecedents and their relations. 
 
@@ -168,10 +168,10 @@ From Example (4) we take relation \emph{"R1 Coref Anaphora:T29 Antecedent:T28 [T
 
 Why is coreference task important in biomedical domain?
 
-Coreference resolution is believed to be useful for improved event and relationship extraction [2]. Until now we do not have concrete results to prove that the coreference resolution improves the Information extraction in biomedical domain, because the protein coreference task did not have enough good results and the motivation of this thesis was to build a high accurate coreference resolution system.
+Coreference resolution is believed to be useful in event and relationship extraction [2]. Until now we do not have concrete results to prove that the coreference resolution improves the information extraction in biomedical domain, because in the competition the protein coreference tasks did not have enough good results. As consequence, the motivation of this thesis was to build a high accurate coreference resolution system.
  
-In other domains, anaphora resolution improves results in different information extraction and machine translation tasks (see section 2), but still the improvements are not as expected because of the accuracy of current anaphora resolution systems[9,10,11,12].
+In other domains, anaphora resolution improves results in different information extraction  tasks for example in relationship extraction and machine translation tasks, but still the improvements are not as expected because of the accuracy of current anaphora resolution systems [9,10,11,12].
  
-Anaphora resolution is not a high-accuracy task for information extraction (IE) systems but properly resolving some kinds of coreference is usually difficult even for humans annotators, who achieved about 80 percent [8].
+Anaphora and coreference resolution are not high-accuracy tasks. Anaphora and coreference resolution are hard also for humans. An experiment shows that humans achieve an accuracy of about 80\% in anaphora resolution [8].
 
 

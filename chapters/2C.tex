@@ -28,7 +28,9 @@ Each language has its part of speech classes. For example in the Albanian langua
 
 \emph{ \textbf{Parsing direction}} refers to the direction in which a sentence is parsed. Parsing can be performed in two directions: from left to right (forward direction), and from right to left (backward direction). The direction of parsing a sentence has an important role in the precision and the speed of a parser. Note that this is also important considering that different languages are written in different directions.\\
 
-\emph{\textbf{Lemmatization}} is the process of removing the prefixes and/or suffixes of a word/token. The lemmatization process transforms a word to its base (pure) form, which is called lemma. This transformation of the word does not change its meaning. The lemmatization process uses dictionaries to find the lemma of the word and deals with irregular forms of words. For example the words transform, transformed, transforming, transformation are all formed from the lemma \emph{transform}. A similar process to lemmatization is steaming, which finds the root of a word.  Root of the word is the part, which carries the semantic content of it. The stemming process can not handle the irregular forms of the words and do not use dictionaries.\\ % The difference is not well explained, not clear
+\emph{\textbf{Lemmatization}} is the process of removing the prefixes and/or suffixes of a word/token. The lemmatization process transforms a word to its base (pure) form, which is called lemma. This transformation of the word does not change its meaning. The lemmatization process uses dictionaries to find the lemma of the word and deals with irregular forms of words. For example the words transform, transformed, transforming, transformation are all formed from the lemma \emph{transform}.
+
+A similar process to lemmatization is steaming, which finds the root of a word.  Root of the word is the part, which carries the semantic content of it. The stemming process can not handle the irregular forms of the words and do not use dictionaries.\\ % The difference is not well explained, not clear
 
 \begin{figure}[ht]
    \begin{center}
@@ -50,7 +52,7 @@ Another case of word sense disambiguation are capitonyms. This is when a word ha
 
 \subsection{NLP tasks that coreference resolution helps}
 
-\emph {\textbf{ Name entity recognition (NER)}} is the process in information retrieval that identifies and classifies mentions in a text that corresponds to a target group (entities) in which we are interested in. For example, in the biomedical domain we are interested in identifying proteins, genes, mutation and viruses. \\
+\emph {\textbf{ Name entity recognition (NER)}} is the process that identifies and classifies mentions in a text that corresponds to a target group (entities) in which we are interested in. For example, in the biomedical domain we are interested in identifying proteins, genes, mutation and viruses. \\
 
 \emph{\textbf{Relationship extraction}} is the process of identifying relations (in a text) between predefined entities. In biomedical information extraction community, the motivation of building an efficient coreference resolution system is that the community believe that coreference resolution improves accuracy of relationship extraction of biomedical entities. \\
 
@@ -58,7 +60,7 @@ Another case of word sense disambiguation are capitonyms. This is when a word ha
 
 \emph{\textbf{Question answering and natural language interfaces}} are tasks that allow humans to communicate with a computer bot. This communication is done in question and answer format. In this situation, humans ask a computer bot and the computer bot answers the humans by voice or text. In conversion (text or voice), people use pronouns and anaphoric expressions and the computer bot should resolve these anaphoric expressions. For this purpose, coreference and anaphora resolution are important components of question answering and natural language interfaces.\\
 
-\emph{\textbf{Document summarization}}  is the process of identifying the essence of the text. This process takes a large text, as input, and return a grammatically and semantically correct smaller text, which contains the essence and the main content of the inputted text. \\
+\emph{\textbf{Document summarization}}  is the process of identifying the essence of the text. This process takes a large text, as input, and returns a grammatically and semantically correct smaller text, which contains the essence and the main content of the inputted text. \\
 
 \section{Syntax}
 
@@ -127,7 +129,7 @@ Clauses are linguistic units that contain a noun phrase and a verb phrase. The c
 
 An independent clause is a grammatically correct group of words that contains a noun phrase that acts as the subject of clause and a verb phrase.
 
-The independent clause has a meaning, expresses a thought and can form alone a sentence. If a sentence has more than one clause then at least one of the clauses is independent. One of the independent clauses is main and it carries the subject and meaning of the sentence, and is called main clause.
+The independent clause has a meaning, expresses a thought and can form alone a sentence. If a sentence has more than one clause then at least one of the clauses is independent. One of the independent clauses is the main clause and it carries the subject and meaning of the sentence, and is called main clause.
 
 If the sentence has two or more independent clauses they are called coordinated clauses and they are connected with a coordinating conjunction. The coordinated conjunctions are: and, but, for, nor, or, so, and yet.
 
