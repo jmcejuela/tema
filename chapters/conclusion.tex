@@ -1,0 +1,16 @@
+\chapter{Conclusion}
+\label{Conclusion}
+\section{Conclusion}
+This thesis has presented the development of an accurate method for protein coreference resolution. The focus was to  improve performance  performance in protein coreference  and applying it in the full text articles. The motivation was to build a protein coreference resolution system that will help relationship extraction in biomedical domain. In this thesis I have described the current protein coreference resolution systems  and current trend in coreference resolution in general and the corpuses that exists. Based on the corpus and current trends I developed a system that uses rules and domain dependent features to resolve anaphora-antecedent links that refer to proteins.   
+
+ The rules were extracted based on the Subject-Verb-Object (SVO) syntactic structure of the English language sentence, the corpus structure and the corpus domain and the "divide and conquer" approach. Firs, I divide the anaphoric expressions in 5 types (relative, personal and possessive pronouns, and indefinite and definite anaphoric expressions).
+
+To resolve personal and possessive pronouns the rules modeled the relationship between clauses and coordinated phrases in the sentence. Pronouns most of the time are used as subject of a clause. If one sentence consist of more than one clause, then if  a possessive or personal pronoun appears in a clause then its antecedent is the subject of previous clause. With similar logic I resolve the cases where a personal or possessive pronoun  appears in coordinated clause. If a pronoun appears in the first clause of the sentence I create an anphora-antecedent link between the pronoun and the subject of the previous sentence. 
+
+To resolve anaphoric noun phrase expressions I use a filter to find protein anaphoric definite noun expressions. The filter is developed based on the domain of the corpus. To predict the antecedent of an anaphoric definite noun phrase I developed a new method based on the best-rule and nearest-candidate first. Additionally, depending on the syntactic and semantic structure of the anaphoric expression different rules are applied to predict the antecedent.
+
+The new rules developed based on syntax  semantic, domain dependent features and relationship of subjects of clauses gave good results. The system that I build achieved an F-score of 63.14\% on data set surpassing the best known result by 2.24\% in F-score. 
+
+The system was also evaluated in full text data set, which I have annotated, and  it achieved an F-score of 70.2\%. To evaluate the system in full text I annotated 8 full text articles.
+
+The accuracy of the system can be improved even more by adding more domain knowledge in the system and using the relationship of the expressions in the sentence. Syntax rich parser can help to improve the accuracy of pronominal anaphora resolution because they give  syntactic features of every token and relationship between tokens in the sentence. Another improvement can be done by modeling relationship of every two consecutive sentences.  

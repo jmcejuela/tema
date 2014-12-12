@@ -25,7 +25,7 @@ Additionally, I will present the first result in 243 coreferent link in corefere
  		\hline  
  	\end{tabular}
   \end{center} 
-  \caption{ Results of the current the best two results and the results of the system that I build}
+  \caption{ Results on the test set of the current best methods and my system }
 \end{table}
 Table 5.1 shows the result of the system and the current state of the art algorithms in Protein coreference resolution in the test data set. The evaluation measures precision (P), recall (R), and F-measure (F)  are in presented in percentage. The system performance is tested in the online system of the Protein coreference task website. This test is performed in the test data set which consists of 250 documents and in this data set appear 284 protein coreference links. The new methods that I implemented in the system improved for 5.3\% the recall and doped the precision for 1.7\%. My system outperforms the current state of the art  method in the F-measure by 2.24\%.
 
@@ -40,9 +40,10 @@ The table 5.2 shows the result of the system in the full text. The system perfor
  		\hline  
  	\end{tabular}
   \end{center} 
-  \caption{ }
+  \caption{Results of the coreference resolution system on full text articles}
 \end{table}
-\begin{table}[t]
+
+\begin{table}[h]
    \begin{center}
    {
    \centering
@@ -62,5 +63,9 @@ The table 5.2 shows the result of the system in the full text. The system perfor
  	\end{tabular}
  	}
   \end{center} 
-  \caption{ Distribution of anaphoric expressions that refer to protein by  syntactic category}
+    \caption{ Results on the development set of the current best methods and my system }
 \end{table}
+\section{Discussion}
+The developed rules which model the relationship between subjects of clauses in the sentence and coordinated phrases, bring significant improvement of more than 4\% in F-score. An improvement of more than 10\% is in the definite noun phrase protein coreference resolution. The new method, which first evaluate the best methods and then predict the nearest candidate as antecedent, and the domain syntactic and domain features had a huge impact in the improvement of the result.  In the other hand,rules gave a decline in for more than 2\% in relative pronouns. Also, I have to say that this system can not achieve an recall better than 92\%, because the system does not resolve the anaphoric indefinite noun phrase expressions. 
+
+In the full text articles system achieves 70.2\% F-score. The system achieves higher precision in full text than in abstracts but lower recall. These differences in precision and recall  of the system in two different data sets are because coreference resolution algorithms are sensitive and dependent from the corpus.
