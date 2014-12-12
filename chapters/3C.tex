@@ -69,15 +69,16 @@ In 2011 was organized a competition in Protein Coreference Resolution. The purpo
 \newpage
 \begin{table}[h]
   \begin{center}
-     \begin{tabular}{L{2.0cm} C{2.2cm} C{2.2cm} C{2.2cm}} 
+  \centering
+     \begin{tabular}{L{2.0cm} C{2.2cm} C{2.2cm} C{2.2cm} @{}m{0pt}@{}} 
 	 	
-  		& Precision & Recall & F-score \\ [1.1ex] 
+  		& Precision & Recall & F-score& \\ [1.1ex] 
  		\hline
- 		1st place & 73.26 & 22.18 & 34.05 \\ [1.1ex]
+ 		1st place & 73.26 & 22.18 & 34.05& \\ [1.1ex]
  		\hline
- 		2nd place & 54.45 & 21.48 & 30.96 \\[1.1ex]
+ 		2nd place & 54.45 & 21.48 & 30.96& \\[1.1ex]
   		\hline
- 		3rd place & 63.22 & 19.37 & 29.65 \\ [1.1ex]
+ 		3rd place & 63.22 & 19.37 & 29.65& \\ [1.1ex]
   		\hline
 	\end{tabular}
   \end{center} 
@@ -92,17 +93,17 @@ After the competition some research groups were interested to improve the result
 \centering
   \begin{center}
   \centering
- 	\begin{tabular}{L{4.2cm} C{2cm} C{2cm} C{2cm}} 
+ 	\begin{tabular}{L{4.2cm} C{2cm} C{2cm} C{2cm}  @{}m{0pt}@{}} 
  		
-  		& Precision & Recall & F-score \\ [1.1ex] 
+  		& Precision & Recall & F-score& \\ [1.1ex] 
  		\hline
- 		Hybrid approach & 55.6 & 67.2 & 60.9 \\ [1.1ex] 
+ 		Hybrid approach & 55.6 & 67.2 & 60.9& \\ [1.1ex] 
  		\hline
- 		Event miner & 50.4 & 62.7 & 55.9 \\ [1.1ex] 
+ 		Event miner & 50.4 & 62.7 & 55.9& \\ [1.1ex] 
  		\hline
- 		Semantic classification & 52.2 & 50.2 & 51.3 \\ [1.1ex] 
+ 		Semantic classification & 52.2 & 50.2 & 51.3& \\ [1.1ex] 
  		\hline
- 		Reconcile & 73.3 & 22.2 & 34.1 \\ [1.1ex] 
+ 		Reconcile & 73.3 & 22.2 & 34.1& \\ [1.1ex] 
  		\hline
 	\end{tabular}
   \end{center} 
@@ -133,7 +134,7 @@ An advantage of HPSG parsers is that they give rich linguistic informations. The
 For each token, leaf node of the tree, the parser provides information about the following linguistic characteristics: unique identifier of the token, syntactic category, Penn Treebank-style part of speech tag, base form, and for each of part of speech gives its characteristics (words, punctuations). For example for verb, gives following information: the person, the number, the tense, aspect and voice(passive/active). 
 \begin{figure}[h]
    \begin{center}
-		\includegraphics[scale=0.25]{Extended.jpg} 
+		\includegraphics[scale=0.38]{Extended.jpg} 
  		\caption[Information that \emph{Enju parser} gives for the token \emph{is}]{Information that \emph{Enju parser} gives for the token \emph{is}[59]}
 		\label{Figure 7}
 	\end{center}

@@ -144,20 +144,21 @@ Indefinite pronouns can act as anaphoric expressions. These cases are not so evi
 
 \subsection{Distribution of anaphoric expressions}
 \begin{table}[h]
+\centering
    \begin{center}
-	 \begin{tabular}{|l | C{2cm} C{2cm} C{2cm} C{2cm}|}
+	 \begin{tabular}{l | C{2cm} C{2cm} C{2cm} C{2cm}}
+ 		
+  		& {\footnotesize BioNLP training data set} & {\footnotesize BioNLP development data set} & {\footnotesize BioNLP test data set} & {\footnotesize Full text data set}\\
  		\hline
-  		& BioNLP training data set & BioNLP development data set & BioNLP test data set &Full text data set\\
- 		\hline
- 		Relative pronouns & 32\% & 34\% & 26\% & 30\% \\
+ 		Relative pronouns & 32\% & 34\% & 26\% & 30\% \\[1.1ex]
  		\hline 
- 		Personal pronouns & 10\% & 12\% & 8\% &12\% \\
+ 		Personal pronouns & 10\% & 12\% & 8\% &12\% \\ [1.1ex]
  		\hline   
- 		Possessive pronouns & 26\% & 29\% & 31\% &19\% \\
+ 		Possessive pronouns & 26\% & 29\% & 31\% &19\% \\ [1.1ex]
  		\hline  
- 		Definite noun phrases & 25\% & 19\% & 24\% & 31\% \\
+ 		Definite noun phrases & 25\% & 19\% & 24\% & 31\% \\[1.1ex]
  		\hline  
- 		Other & 7\% & 6\% & 11\% &8\% \\
+ 		Other & 7\% & 6\% & 11\% &8\% \\ [1.1 ex]
  		\hline   
 	\end{tabular}
   \end{center} 
@@ -175,23 +176,24 @@ The first step in antecedent candidates selection of  anaphoric expressions was 
  
 \begin{table}[h]
    \begin{center}
- 	  \begin{tabular}{|l | C{2cm} C{2cm} C{2cm} C{2cm}|}
+   \centering
+ 	  \begin{tabular}{l | C{2cm} C{2cm} C{2cm} C{2cm} @{}m{0pt}@{}}
+ 		
+ 		& \multicolumn{4}{c}{Test set}&\\[1.5ex]
  		\hline
- 		& \multicolumn{4}{|c|}{Test set}\\[1.5ex]
+ 		& D=0 & D=1 & D=2 & D$>$2&\\ [1.1ex]
  		\hline
- 		& D=0 & D=1 & D=2 & D$>$2\\
- 		\hline
- 		Relative pronouns & 100\% & 0\% & 0\% &0\% \\
+ 		Relative pronouns & 100\% & 0\% & 0\% &0\%& \\ [1.1ex]
  		\hline 
- 		Personal pronouns & 80\% & 20\% & 0\% &0\% \\
+ 		Personal pronouns & 80\% & 20\% & 0\% &0\% &\\ [1.1ex]
  		\hline   
- 		Possessive pronouns & 83\% & 11\% & 5\% &1\% \\
+ 		Possessive pronouns & 83\% & 11\% & 5\% &1\%& \\ [1.1ex]
  		\hline  
- 		Definite noun phrases & 31\% & 46\% & 8\% &15\% \\
+ 		Definite noun phrases & 31\% & 46\% & 8\% &15\%& \\[1.1ex]	
  		\hline  
- 		Other & 47\% & 29\% & 15\% &9\% \\
+ 		Other & 47\% & 29\% & 15\% &9\%& \\[1.1 ex]
  		\hline  
-  		Total & 72\% & 19\% & 4\% &5\% \\
+  		Total & 72\% & 19\% & 4\% &5\%& \\ [1.1ex]
  		\hline  
      \end{tabular}
    \end{center} 
@@ -200,23 +202,22 @@ The first step in antecedent candidates selection of  anaphoric expressions was 
 
 \begin{table}[h]
   \begin{center}
-	\begin{tabular}{|l | C{2cm} C{2cm} C{2cm} C{2cm}|}
+	\begin{tabular}{ l | C{2cm} C{2cm} C{2cm} C{2cm} @{}m{0pt}@{}}
+ 	    & \multicolumn{4}{c}{Development set}&\\[1.5ex]
  		\hline
- 		& \multicolumn{4}{|c|}{Test set}\\[1.5ex]
+ 		& D=0 & D=1 & D=2 & D$>$2&\\ [1.1ex]
  		\hline
- 		& D=0 & D=1 & D=2 & D$>$2\\
- 		\hline
- 		Relative pronouns & 100\% & 0\% & 0\% &0\% \\
+ 		Relative pronouns & 100\% & 0\% & 0\% &0\%& \\ [1.1ex]
  		\hline 
- 		Personal pronouns & 84\% & 16\% & 0\% &0\% \\
+ 		Personal pronouns & 84\% & 16\% & 0\% &0\% &\\ [1.1ex]
  		\hline   
- 		Possessive pronouns & 90\% & 10\% & 0\% &0\% \\
+ 		Possessive pronouns & 90\% & 10\% & 0\% &0\%& \\ [1.1ex]
  		\hline  
- 		Definite noun phrases & 42\% & 34\% & 0\% & 8\% \\
+ 		Definite noun phrases & 42\% & 34\% & 0\% & 8\%& \\ [1.1ex]
  		\hline  
- 		Other & 72\% & 14\% & 14\% &14\% \\
+ 		Other & 72\% & 14\% & 14\% &14\%& \\ [1.1ex]
  		\hline  
-  		Total & 82.6\% & 12.4\% & 1\% &4\% \\
+  		Total & 82.6\% & 12.4\% & 1\% &4\%& \\ [1.1ex]
  		\hline  
 	\end{tabular}
   \end{center}
@@ -284,7 +285,7 @@ I realised that relative pronouns and their antecedent are always in the same se
 \begin{figure}[h]
   \begin{center}
 	 \includegraphics[scale=0.6]{relative.jpg} 
- 	 \caption{ DESCRIPTION }
+ 	 \caption[Coreference resolution of relative pronouns]{Coreference resolution of relative pronouns}
 	 \label{Figure 11}
   \end{center}
 \end{figure}
@@ -292,12 +293,12 @@ I realised that relative pronouns and their antecedent are always in the same se
 \subsection{Personal pronouns} 
 From the statistics and mining the data set I realised that when  the personal pronoun appears in the second or third clause of the sentence then its antecedent is the  subject of the previous (nearest) clause, in the first or in the second clause, respectively.  The same rule is when in the sentence we have two coordinated noun phrases. 
 
-If the personal pronoun appears in the first clause then the personal pronoun is the subject of the sentence. In this case, I take as antecedent the subject of the previous  sentence. I base this rules based on the assumption:\emph{"In scientific writing people try to follow the rules of cohesion and coherence. This mean that in one paragraph they do not introduce so many subjects and describe just one subject and its property."}
+If the personal pronoun appears in the first clause then the personal pronoun is the subject of the sentence. In this case, I take as antecedent the subject of the previous  sentence.
 
 \begin{figure}[h]
   \begin{center}
 	\includegraphics[scale=0.53]{PersonalPronounsNP.jpg} 
- 	\caption{Simulation of  the rule when the anaphora is in the second clause and the antecedent is in the first clause of a complex sentence.}
+ 	\caption[Simulation of  a rules in personal pronouns]{Simulation of  the rule when the anaphora is in the second clause and the antecedent is in the first clause of a complex sentence.}
 	\label{Figure 12}
   \end{center}
 \end{figure}
@@ -305,25 +306,26 @@ If the personal pronoun appears in the first clause then the personal pronoun is
 \footnotetext{Sentence "Thus, although CD3, CD28, and CD2 activate many of the same signaling molecules, they differed in their capacity to induce the tyrosine phosphorylation of HSI." is taken from PMID-9794375}
 
 An exception is when we have two coordinated verb phrases. If  the anapha (it or they) appears in a coordinated verb phrase, and it is in the second verb phrase, then I do not search for antecedent in the first verb phrases because "the verb phrase describe an activity that is taken from the subject". Thus, both verb phrases of coordinated phrases describe an activity, and the activity is taken by the subject of the sentence and I select as antecedent the subject of previous clause (sentence) in which the anaphora appears. 
-
+\newpage
 \begin{figure}[h]
   \begin{center}
 	\includegraphics[scale=0.50]{PersonalPronounsVP.jpg} 
- 	\caption[Caption for LOF]{Simulation of  the rule when the anaphora is in the second verb phrase of a coordinated verb phrase and I chose as antecedent the subject of the nearest clause (sentence).\footnotemark}
+ 	\caption[Simulation of  a rules in personal pronouns]{Simulation of  the rule when the anaphora is in the second verb phrase of a coordinated verb phrase and I chose as antecedent the subject of the nearest clause (sentence).\footnotemark}
 	\label{Figure 13}
   \end{center}
  \end{figure}
  
 \footnotetext{Sentence "Therefore, our data not only reveal that Nmi can potentiate STAT-dependent transcription, but also suggest that it can augment co-activator protein recruitment to at least some members of a group of sequence-specific transcription factors." is taken from PMID-8108414}
 
-\newpage
+
 \subsection{Possessive pronouns}
 
 The same idea and the same rules I applied in possessive pronouns. From the mining of the corpus,I realised that possessive pronouns appear more in coordinated noun phrases. 
+\newpage
 \begin{figure}[h]
   \begin{center}
 	\includegraphics[scale=0.30]{PossesiveNP.jpg} 
- 	\caption["to document"]{Simulation of  the rule when the anaphora  is in the second coordinated noun phrase of a coordinated noun phrase and I chose the antecedent from the previous noun phrase\footnotemark}
+ 	\caption[Simulation of  a rules in possessive pronouns]{Simulation of  the rule when the anaphora  is in the second coordinated noun phrase of a coordinated noun phrase and I chose the antecedent from the previous noun phrase\footnotemark}
 	\label{Figure 14}
   \end{center}
  \end{figure}
@@ -334,7 +336,7 @@ The same idea and the same rules I applied in possessive pronouns. From the mini
 \begin{figure}[h]
   \begin{center}
 	\includegraphics[scale=0.30]{PossesiveNP.jpg} 
- 	\caption[Caption for LOF]{Simulation of  the rule when the anaphora  is in the second coordinated noun phrase of a coordinated noun phrase and I chose the antecedent from the previous noun phrase\footnotemark}
+ 	\caption[Simulation of  a rules in possessive pronouns]{Simulation of  the rule when the anaphora  is in the second coordinated noun phrase of a coordinated noun phrase and I chose the antecedent from the previous noun phrase\footnotemark}
 	\label{Figure 15}
   \end{center}
 \end{figure}

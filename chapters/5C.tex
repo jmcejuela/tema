@@ -2,7 +2,7 @@
 \label{Results}
 \section{Results}
 
-In this chapter I will show the performance results for the protein coreference resolution system.The evaluation is done in the way that is described in the first chapter. To evaluate the system in the development and the test set I used the BioNLP online testing system [71][72]. In the development set there are 202 coreferent links the system should predict and in the test set there are 284 coreferent links that the system should predict.  
+In this chapter I will show the performance results for the protein coreference resolution system.The evaluation is done in the way that is described in the first chapter. To evaluate the system in the development and the test set I used the BioNLP online testing system [71,72]. In the development set there are 202 coreferent links the system should predict and in the test set there are 284 coreferent links that the system should predict.  
 
 I will show the result of the whole system and I will compare with the current state of the art method and other best methods.
 
@@ -11,16 +11,17 @@ For the development data set I will compare results with current state of the ar
 Additionally, I will present the first result in 243 coreferent link in coreference resolution in full text articles.
 
 \begin{table}[h]
+\centering
    \begin{center}
-	 \begin{tabular}{l | C{1.7cm} C{2cm} C{1.7cm}}
+	 \begin{tabular}{l | C{1.7cm} C{2cm} C{1.7cm} @{}m{0pt}@{}}
+ 		
+  		Methods & Recall & Precision & F &  \\[1.1ex]
  		\hline
-  		Methods & Recall & Precision & F  \\
- 		\hline
- 		CR resolver & 52.5 & 50.2 & 51.3  \\
+ 		CR resolver & 52.5 & 50.2 & 51.3&  \\ [1.1ex]
  		\hline 
- 		Current state of the art & 55.6 & 67.2 & 60.9 \\
+ 		Current state of the art & 55.6 & 67.2 & 60.9 & \\ [1.1ex]
  		\hline   
- 		\textbf{My system} & \textbf{60.92} & \textbf{65.53} & \textbf{63.14} \\
+ 		\textbf{My system} & \textbf{60.92} & \textbf{65.53} & \textbf{63.14}& \\ [1.1ex]
  		\hline  
  	\end{tabular}
   \end{center} 
@@ -31,11 +32,11 @@ Table 5.1 shows the result of the system and the current state of the art algori
 The table 5.2 shows the result of the system in the full text. The system performance is tested in 8 full text documents, in which appear 243 protein coreference links. The result that I present in this thesis are first results in full text articles. This results are first because the protein coreference  resolution is a new research filed and  does not exist an annotated corpus with full text articles.   
 \begin{table}[h] 
    \begin{center}
-	 \begin{tabular}{l | C{1.7cm} C{2cm} C{1.7cm}}
+	 \begin{tabular}{l | C{1.7cm} C{2cm} C{1.7cm}  @{}m{0pt}@{} }
+ 		
+  		Methods & Recall & Precision & F1 & \\ [1.1ex]
  		\hline
-  		Methods & Recall & Precision & F1  \\
- 		\hline
- 		\textbf{My system} & \textbf{61.3} & \textbf{82.3} & \textbf{70.2} \\
+ 		\textbf{My system} & \textbf{61.3} & \textbf{82.3} & \textbf{70.2}& \\ [1.1ex]
  		\hline  
  	\end{tabular}
   \end{center} 
