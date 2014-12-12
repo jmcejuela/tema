@@ -2,7 +2,7 @@
 \label{chapter:Introduction}
 \section{Coreference resolution}
 
-Coreference resolution is the process of determining whether two or more expressions in natural language refer to same entity in the real world [4]. Coreference resolution is an important and challenging task of natural language processing (NLP) [1][5]. It is believed to be useful in question answering, information extraction, relationship extraction and document summarization among others. \vspace{5mm}
+Coreference resolution is the process of determining whether two or more expressions in natural language refer to same entity in the real world [4]. Coreference resolution is an important and challenging task of natural language processing (NLP) [1,5]. It is believed to be useful in question answering, information extraction, relationship extraction and document summarization among others. \vspace{5mm}
   
 \emph{Example (1):}
 \begin{changemargin}{10mm}{10mm} 
@@ -18,7 +18,7 @@ Anaphora (anaphoric expression) is the linguistic phenomenon of pointing back to
 
 If the antecedent and anaphora refer to a same entity in the real world they are coreferential [73].
 
-Gasperin defines anaphora as a directed relation between two linguistic expressions in the text, where the reader, in order to interpret the second expression, is referred back to the first one. In Figure 1.1 we can see the intersection and difference between coreference and anaphora. The intersection of these two terms is coreferent anaphora. Thus, a coreferent anaphora is when the anaphora is dependent from the antecedent and they refer to same entity.[49]
+Gasperin defines anaphora as a directed relation between two linguistic expressions in the text, where the reader, in order to interpret the second expression, is referred back to the first one. In Figure 1.1 we can see the intersection and difference between coreference and anaphora. The intersection of these two terms is coreferent anaphora. Thus, a coreferent anaphora is when the anaphoric expression is dependent from the antecedent and they refer to same entity [49].
 
 Associative anaphora is a relation between two expressions where the anaphora's interpretation depends on the antecedent, but nevertheless, they do not semantically refer to a same entity. In example 2, \emph{"the door"} is an associative anaphora and its antecedent is \emph{"the room"}, because to interpret the expression\emph{"the door"} we need to refer back to the expression \emph{"the room"}.\\
 
@@ -44,7 +44,7 @@ Mathematically, defining Referent$(\alpha_1)$ as the\emph{"the entity referred t
  
 Hence, coreference is an equivalence relation (reflexive, symmetric and transitive relations). From symmetric relation, the conclusion is that $\alpha_1$ and $\alpha_2$ are semantically independent. Furthermore, the authors [24] define anaphoric relation of two expressions $\alpha_1$ (antecedent) and $\alpha_2$ (anaphora), if and only if $\alpha_2$ depends on $\alpha_1$ for its interpretation. 
  
-Summarizing, anaphora resolution is the task of finding mentions (anaphoras) that are dependent in their interpretation on a second expression (their antecedent). On the other hand, coreference resolution can be seen as a clustering task, where we must find all mentions in the text that refer to same entity.
+Summarizing, anaphora resolution is the task of finding mentions (anaphoras) that are dependent in their interpretation on a second expression (their antecedent). On the other hand, coreference resolution can be seen as a clustering task, where we have to find all mentions in the text that refer to same entity.
 
 \section{Coreference resolution in Biomedical literature}
 
@@ -69,7 +69,7 @@ The BioNLP corpus consists of 1210 annotated abstracts. The corpus is divided in
 \end{figure}
 \footnotetext{Figure taken from [63]}
 
-I will clarify the content of the protein annotation and coreference relation files by examples. In Figure 1 annotations T4-10, marked with purple color, are protein annotations. Every protein name mentioned in the text is annotated. Each annotation consist of its id, offsets (begin span and end span) and its string content, and this information is inserted in the protein annotation file as in Example (3).\\
+I will clarify the content of the protein annotation and coreference relation files by examples. In Figure 1 .2annotations T4-10, marked with purple color, are protein annotations. Every protein name mentioned in the text is annotated. Each annotation consist of its id, offsets (begin span and end span) and its string content, and this information is inserted in the protein annotation file as in Example (3).\\
 
 \emph{Example (3):}
 {\fontfamily{qcr}\selectfont
@@ -92,8 +92,8 @@ The coreference relation file contains three types of annotations: anaphoric ann
 \emph{Example (4)\footnotemark :}
 {\fontfamily{qcr}\selectfont
 	\begin{tabbing}
-		T27 \= Exp 179 222\hspace{3mm} \= the NF-kappa B TF compl 215 222 compl \\
-		T28 \> Exp 264 297 \> NF-kappa B p65 and NF-kappa B p50\\
+		{\small T27 \= Exp 179 222\hspace{3mm} \= the NF-kappa B TF compl 215 222 compl} \\
+		{\small T28 \> Exp 264 297 \> NF-kappa B p65 and NF-kappa B p50}\\
 		T29 \> Exp 307 312 \> which\\
 		T30 \> Exp 459 471 \> this complex \hspace{2mm}   464 471 complex \\
 		T31 \> Exp 868 882 \> NF-kappa B p65\\
