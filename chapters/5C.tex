@@ -65,7 +65,13 @@ The table 5.2 shows the result of the system in the full text. The system perfor
   \end{center} 
     \caption{ Results on the development set of the current best methods and my system }
 \end{table}
+Table 5.3  shows the results on the development data set. These results are presented in four categories and the results are compared with the current state of the art. In the last column we see the difference of the F-scores between my system ann the current state of the art system. With blue color are presented improvements of F-scores, and with  red color th decline of my system.
+  
 \section{Discussion}
-The developed rules which model the relationship between subjects of clauses in the sentence and coordinated phrases, bring significant improvement of more than 4\% in F-score. An improvement of more than 10\% is in the definite noun phrase protein coreference resolution. The new method, which first evaluate the best methods and then predict the nearest candidate as antecedent, and the domain syntactic and domain features had a huge impact in the improvement of the result.  In the other hand,rules gave a decline in for more than 2\% in relative pronouns. Also, I have to say that this system can not achieve an recall better than 92\%, because the system does not resolve the anaphoric indefinite noun phrase expressions. 
+The developed rules for pronominal  coreference resolution, which model the relationship between subjects of clauses in the sentence and coordinated phrases and domain dependent features, bring significant improvement of more than 4\% in F-score 
 
-In the full text articles system achieves 70.2\% F-score. The system achieves higher precision in full text than in abstracts but lower recall. These differences in precision and recall  of the system in two different data sets are because coreference resolution algorithms are sensitive and dependent from the corpus.
+This new method bring an improvement of F-score more than 10\% in the definite noun phrase protein coreference resolution. The new method, which first evaluate the best methods and then predict the nearest candidate as antecedent, and also uses the domain syntactic and domain features had a huge impact in the improvement of the result. 
+
+In the other hand, rules gave a decline for more than 2\% in relative pronouns coreference resolution. Also, I have to say that this system can not achieve a recall better than 92\%, because the system does not resolve anaphoric indefinite noun phrase expressions. 
+
+In the full text articles the system achieves 70.2\% F-score. The system has better precision in full text than in abstracts. In the other hand the system has better recall in abstracts than in full texts. These differences( precision and recall) of the system in two different data sets are because coreference resolution algorithms are sensitive and dependent from the corpus.

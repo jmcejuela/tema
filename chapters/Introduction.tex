@@ -92,33 +92,36 @@ The coreference relation file contains three types of annotations: anaphoric ann
 \emph{Example (4)\footnotemark :}
 {\fontfamily{qcr}\selectfont
 	\begin{tabbing}
-		{\small T27 \= Exp 179 222\hspace{3mm} \= the NF-kappa B TF compl 215 222 compl} \\
-		{\small T28 \> Exp 264 297 \> NF-kappa B p65 and NF-kappa B p50}\\
-		T29 \> Exp 307 312 \> which\\
-		T30 \> Exp 459 471 \> this complex \hspace{2mm}   464 471 complex \\
-		T31 \> Exp 868 882 \> NF-kappa B p65\\
-		T32 \> Exp 1022 1047 \> this TF   1027 1047  trans. factor\\
-		R1  \hspace{5mm} \=  Coref Anaphora:T29 Antecedent:T28  \hspace{5mm}  \= [T5, T4]\\
-		R2 \>  Coref Anaphora:T30 Antecedent:T27\\
-		R3 \>  Coref Anaphora:T32 Antecedent:T31  \>  [T10]\\
+		{\small T27} \= {\small Exp 179 222}\hspace{3mm} \= {\small the NF-kappa B TF complex} {\small 215 222 complex} \\
+		{\small T28} \> {\small Exp 264 297} \> {\small NF-kappa B p65 and NF-kappa B p50}\\
+		{\small T29} \> {\small Exp 307 312} \> {\small which}\\
+		{\small T30} \> {\small Exp 459 471} \> {\small this complex} \hspace{2mm}   {\small 464 471 complex} \\
+		{\small T31} \> {\small Exp 868 882} \> {\small NF-kappa B p65}\\
+		{\small T32} \> {\small Exp 1022 1047} \> {\small this TF   1027 1047  trans. factor}\\
+		{\small R1}  \hspace{5mm} \=  {\small Coref Anaphora:T29 Antecedent:T28}  \hspace{5mm}  \= {\small [T5, T4]}\\
+		{\small R2} \>  {\small Coref Anaphora:T30 Antecedent:T27}\\
+		{\small R3} \>  {\small Coref Anaphora:T32 Antecedent:T31}  \>  {\small [T10]}\\
 	\end{tabbing}
 }
-\footnotetext{Transcription factor is shorten in TF and complex in compl because of limited line space}
+\footnotetext{Transcription factor is shorten in TF because of limited line space}
 \vspace{5mm} 
 
-\emph{In Example (4), the first line indicates that in the offset 179-222 of the abstract there is a protein mention "the NF-kappa B transcription factor complex". Its minimal , which still carries its meaning, is "complex" (215-222), and this annotation has the index "T27". In this way, every annotation (a protein mention or an expression that refers to a protein) is described in the coreference relation file.}
+\emph{In Example (4), the first line indicates that in the offset 179-222 of the abstract there is a protein mention "the NF-kappa B transcription factor complex". Its minimal expression, which still carries its meaning, is "complex" (215-222), and this annotation has the index "T27". In this way, every annotation (a protein mention or an expression that refers to a protein) is described in the coreference relation file.}
 
-\emph{The last line describes the coreference relation between mentions T32 and T31. Also, we can see that mention T32 is an anaphora and refers to T31, which in its string contains a protein name T10 (p65). So, here we see that we have two types of coreference relations. The first type of relation is between two corefering mentions, like T32 with T31, and the second type of relation is between a mention and a protein name (T32 with T10).}
+\emph{The last line describes the coreference relation between mentions T32 and T31. Also, we can see that mention T32 is an anaphoric expression and refers to T31, which in its string contains the protein name \emph{p65} (\emph{T10}). So, here we see that we have two types of coreference relations. The first type of relation is between two corefering mentions, like T32 with T31, and the second type of relation is between a mention and a protein name (T32 with T10).}
 
 \subsection{Task description and evaluation}
 
 For both types of coreference relations the BioNLP community (mentioned in the previous section) defined a sub-task. First relation type is named surface coreference resolution and the latter is named protein coreference resolution.
 
-For both tasks, the resolver receives a text and a protein annotation file, and as output should return all protein mentions with their offsets and coreference relations between mentions. The result should be a file similar to Example (3), with all detected protein mentions and relations. 
+For both tasks, the resolver receives a text and a protein annotation file, and as output should return all protein mentions with their offsets and coreference relations between mentions. The result should be a file similar to Example (3), with all detected anaphoric expressions , antecedents and their relations. 
 
 \subsection{Evaluation Measures}
 
-In this section, I will define the Protein Coreference Resolution task(in abstracts and full text) mathematically and its evaluation measures. The task($f$) of protein coreference resolution, which is defined by the BioNLP community, I define formally in the following way:" given a text (abstract) $T$ with annotated protein names $P$, the system should return ordered couples $(x, y)$ where $y$  is the antecedent of $x$".\\
+In this section, I will define the Protein Coreference Resolution task(in abstracts and full text) mathematically and its evaluation measures.
+
+The task($f$) of protein coreference resolution, which is defined by the BioNLP community, I define formally in the following way:" given a text (abstract) $T$ with annotated protein names $P$, the system should return ordered couples $(x, y)$ where $y$
+is an anaphoric expression and its antecedent is $y$ and  $y$ is a protein name.\\
 \begin{center}
   $f(X,P)=\{(x_i,y_i) |i=1..n \And Antecedent(y_i)=x_i \And y_i= protein$  $name\}$ \\
   $X-string$ \\
@@ -136,13 +139,13 @@ The system that I built produce three types of anaphora-antecedent links(pairs):
   \item missing links
   \item spurious response links.
 \end{itemize}
-From these three types of links we can derive:
+From these three types of links I can derive:
 \begin{itemize}	
  \item $true$ $positive$ $(tp)$ - number of  correct anaphora-antecedent links - links that the system correctly predicted\\
  \item $true$ $negative$ $(tn)$ - number of missing anaphora-antecedent links - links that the system did not find\\
  \item $false$ $positive$ $(fp)$ - number of spurious anaphora-antecedent links - links that the system predicted wrong \\
 \end{itemize}
-To measure the accuracy of the system we use the traditional  precision, recall and F-score  measurement which are defined in the following way\\
+To measure the accuracy of the system I use the traditional  precision, recall and F-score  measurement which are defined in the following way\\
 \hspace{2cm}  Precision: \hspace{1cm}\\
 \hspace{4cm}\[ \scalebox{1.2} {$P =\frac{tp}{tp+fp}$}\] \\
 \hspace{2cm} Recall: \\
@@ -154,10 +157,12 @@ F-score is taken as equally weighted harmonic mean of precision and recall:\\
 \subsection{Evaluation measures in BioNLP Protein coreference resolution}
 
 In the surface coreference mode, the resolvers should find anaphoric protein expressions and their antecedents, regardless of whether antecedent actually embed protein names or not. 
-The protein coreference mode evaluates the performance of finding anaphoric protein references, which their antecedent contains a protein name. 
+
+\textbf{The protein coreference mode} evaluates the performance of finding anaphoric protein references, which their antecedent contains a protein name. 
+
 My main focus in this thesis was to build a system which achieves high accuracy in protein coreference mode. Thus, I will describe the scoring principle of protein coreference mode using an example.
 
-From example (4) we take relation \emph{"R1 Coref Anaphora:T29 Antecedent:T28 [T5, T4]"}. Antecedent T28 contains two protein names \emph{p50} and \emph{p65}. So, in the protein coreference mode, we check whether (T29, T5) and (T29,T4) are predicted or not. For each of these pairs, if the system predicted, it gets 1 point. The whole R1 has two points. If the system finds just (T29,T5), it gets 1 point. Wrong predicted pairs decrease the system's precision. 
+From Example (4) we take relation \emph{"R1 Coref Anaphora:T29 Antecedent:T28 [T5, T4]"}. Antecedent T28 contains two protein names \emph{p50} and \emph{p65}. So, in the protein coreference mode, we check whether (T29, T5) and (T29,T4) are predicted or not. For each of these pairs, if the system predicted, it gets 1 point. The whole R1 has two points. If the system finds just (T29,T5), it gets 1 point. Wrong predicted pairs decrease the system's precision. 
 
 \subsection{Importance of coreference resolution}
 
